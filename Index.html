@@ -23,6 +23,168 @@
 
     body {
       margin: 0;
+      background: url('image.png') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      background-color: #fffdd0;
+      border-bottom-left-radius: 100px;
+      border-bottom-right-radius: 100px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 20px 0;
+      font-family: 'HandMade', cursive;
+      font-size: 36px;
+      animation: pop 1s ease;
+    }
+
+    .nav-item a {
+      text-decoration: none;
+      color: black;
+      padding: 10px 20px;
+      display: inline-block;
+      animation: burst 1.2s ease;
+    }
+
+    .nav-logo img {
+      height: 100px;
+      animation: old-tv 1.3s ease;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes burst {
+      0% { transform: scale(0); opacity: 0; }
+      70% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes old-tv {
+      0% { transform: scale(0.8); opacity: 0; filter: brightness(200%); }
+      50% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); filter: brightness(100%); }
+    }
+
+    @keyframes breathe {
+      0%, 100% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.05); opacity: 1; }
+    }
+
+    @keyframes ascend {
+      0% { transform: translateY(50px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    .punch-line {
+      text-align: center;
+      font-family: 'Pacifico', cursive;
+      font-size: 41.7px;
+      color: #fffdd0;
+      margin-top: 40px;
+      animation: breathe 2s ease-in-out infinite;
+    }
+
+    .what-special {
+      text-align: center;
+      font-family: 'Lobster', cursive;
+      font-size: 50.3px;
+      color: #ffffff;
+      margin-top: 30px;
+      animation: ascend 1.5s ease;
+    }
+
+    .description {
+      text-align: center;
+      font-family: 'Lobster', cursive;
+      font-size: 31.5px;
+      color: #f4f6fc;
+      margin: 20px auto;
+      max-width: 800px;
+      animation: burst 1.2s ease;
+    }
+
+    .testimonials-heading {
+      font-family: 'Bauer Bodoni', serif;
+      font-size: 38.6px;
+      color: #fffdd0;
+      text-align: right;
+      margin: 50px 100px 10px 0;
+      animation: burst 1.2s ease;
+    }
+
+    .testimonial {
+      font-family: 'Canvas Sans', sans-serif;
+      font-size: 24px;
+      color: #ffffff;
+      font-weight: bold;
+      text-align: right;
+      max-width: 900px;
+      margin: 20px 100px;
+      animation: burst 1.2s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="nav-item"><a href="#ourstory">Our Story</a></div>
+    <div class="nav-item"><a href="#products">Products</a></div>
+    <div class="nav-logo"><img src="Snac Berry.png" alt="Snac Berry Logo"></div>
+    <div class="nav-item"><a href="#testimonials">Testimonials</a></div>
+    <div class="nav-item"><a href="#findus">Find Us</a></div>
+  </div>
+
+  <div class="punch-line">Taste The Fun, Bite The Berry - Snac Berry</div>
+
+  <div class="what-special">What Makes Us Special?</div>
+
+  <div class="description">
+    At Snac Berry, we believe snacks should be guilt-free and flavorful. That’s why every pack is a burst of crunch and care.
+  </div>
+
+  <div class="testimonials-heading">Testimonials</div>
+
+  <div class="testimonial">
+    “Their service and their product both are very good. Our customers liked it very much! Keep it up Snac Berry!” – <strong>Gupta Ji’s Grocery Store</strong>
+  </div>
+
+  <div class="testimonial">
+    “Their taste, fragrance, aroma... All three are superb! We really appreciate your work!” – <strong>K-Mart</strong>
+  </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Snac Berry</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Lobster&display=swap');
+
+    @font-face {
+      font-family: 'HandMade';
+      src: url('path-to-handmade-font.woff2');
+    }
+
+    @font-face {
+      font-family: 'Bauer Bodoni';
+      src: url('path-to-bauer-bodoni.woff2');
+    }
+
+    @font-face {
+      font-family: 'Canvas Sans';
+      src: url('path-to-canvas-sans.woff2');
+    }
+
+    body {
+      margin: 0;
       background-color: #dd2b20;
     }
 
