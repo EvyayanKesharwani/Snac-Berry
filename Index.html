@@ -5,9 +5,20 @@
   <title>Snac Berry</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Lobster&display=swap');
+
     @font-face {
       font-family: 'HandMade';
-      src: url('path-to-handmade-font.woff2') format('woff2'); /* Replace with actual path */
+      src: url('path-to-handmade-font.woff2');
+    }
+
+    @font-face {
+      font-family: 'Bauer Bodoni';
+      src: url('path-to-bauer-bodoni.woff2');
+    }
+
+    @font-face {
+      font-family: 'Canvas Sans';
+      src: url('path-to-canvas-sans.woff2');
     }
 
     body {
@@ -18,6 +29,7 @@
     /* Navigation Bar */
     .navbar {
       background-color: #ffdd00;
+      border-radius: 100px;
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -27,19 +39,17 @@
       animation: pop 1s ease;
     }
 
-    .nav-item {
+    .nav-item a {
+      text-decoration: none;
+      color: black;
+      padding: 10px 20px;
+      display: inline-block;
       animation: burst 1.2s ease;
     }
 
-    .nav-logo {
-      animation: old-tv 1.3s ease; /* fallback below if not supported */
-    }
-
-    /* Fallback if old-tv not available */
-    @keyframes old-tv {
-      0% { transform: scale(0.8); opacity: 0; filter: brightness(200%); }
-      50% { transform: scale(1.1); opacity: 1; }
-      100% { transform: scale(1); filter: brightness(100%); }
+    .nav-logo img {
+      height: 100px;
+      animation: old-tv 1.3s ease;
     }
 
     @keyframes pop {
@@ -53,10 +63,30 @@
       100% { transform: scale(1); }
     }
 
+    @keyframes old-tv {
+      0% { transform: scale(0.8); opacity: 0; filter: brightness(200%); }
+      50% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); filter: brightness(100%); }
+    }
+
     @keyframes breathe {
-      0% { transform: scale(1); opacity: 0.8; }
+      0%, 100% { transform: scale(1); opacity: 0.8; }
       50% { transform: scale(1.05); opacity: 1; }
-      100% { transform: scale(1); opacity: 0.9; }
+    }
+
+    @keyframes ascend {
+      0% { transform: translateY(50px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes lift {
+      0% { transform: translateY(100px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes roll {
+      0% { transform: translateX(-100%) rotate(-360deg); opacity: 0; }
+      100% { transform: translateX(0) rotate(0deg); opacity: 1; }
     }
 
     .punch-line {
@@ -65,7 +95,7 @@
       font-size: 41.7px;
       color: #fffdd0;
       margin-top: 40px;
-      animation: breathe 4s infinite;
+      animation: lift 1.5s ease;
     }
 
     .what-special {
@@ -74,6 +104,7 @@
       font-size: 50.3px;
       color: #ffffff;
       margin-top: 30px;
+      animation: lift 1.5s ease;
     }
 
     .description {
@@ -81,19 +112,41 @@
       font-family: 'Lobster', cursive;
       font-size: 31.5px;
       color: #f4f6fc;
-      max-width: 800px;
       margin: 20px auto;
+      max-width: 800px;
+      animation: burst 1.2s ease;
+      text-shadow: 74px 34px 41px rgba(0, 0, 0, 0.3);
+    }
+
+    .testimonials-heading {
+      font-family: 'Bauer Bodoni', serif;
+      font-size: 38.6px;
+      color: #fffdd0;
+      text-align: center;
+      margin-top: 50px;
+      animation: burst 1.2s ease;
+    }
+
+    .testimonial {
+      font-family: 'Canvas Sans', sans-serif;
+      font-size: 24px;
+      color: #ffffff;
+      font-weight: bold;
+      text-align: center;
+      max-width: 900px;
+      margin: 20px auto;
+      animation: roll 1.4s ease;
     }
   </style>
 </head>
 <body>
 
   <div class="navbar">
-    <div class="nav-item">Our Story</div>
-    <div class="nav-item">Products</div>
-    <div class="nav-logo"><img src="Snac Berry.png" alt="Logo" height="80"></div>
-    <div class="nav-item">Testimonials</div>
-    <div class="nav-item">Find Us</div>
+    <div class="nav-item"><a href="#ourstory">Our Story</a></div>
+    <div class="nav-item"><a href="#products">Products</a></div>
+    <div class="nav-logo"><img src="Snac Berry.png" alt="Snac Berry Logo"></div>
+    <div class="nav-item"><a href="#testimonials">Testimonials</a></div>
+    <div class="nav-item"><a href="#findus">Find Us</a></div>
   </div>
 
   <div class="punch-line">Taste The Fun, Bite The Berry - Snac Berry</div>
@@ -102,6 +155,16 @@
 
   <div class="description">
     At Snac Berry, we believe snacks should be guilt-free and flavorful. That’s why every pack is a burst of crunch and care.
+  </div>
+
+  <div class="testimonials-heading">Testimonials</div>
+
+  <div class="testimonial">
+    “Their service and their product both are very good. Our customers liked it very much! Keep it up Snac Berry!” – <strong>Gupta Ji’s Grocery Store</strong>
+  </div>
+
+  <div class="testimonial">
+    “Their taste, fragrance, aroma... All three are superb! We really appreciate your work!” – <strong>K-Mart</strong>
   </div>
 
 </body>
