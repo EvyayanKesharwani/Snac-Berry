@@ -1,167 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Snac Berry</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Lobster&display=swap');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnacBerry | Wholesale Namkeen & Chips Manufacturer</title>
+    <style>
+        /* CSS RESET & BASE STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
 
-    @font-face {
-      font-family: 'HandMade';
-      src: url('path-to-handmade-font.woff2');
-    }
+        body {
+            background-color: #fff9e6;
+            color: #333;
+        }
 
-    @font-face {
-      font-family: 'Bauer Bodoni';
-      src: url('path-to-bauer-bodoni.woff2');
-    }
+        /* HEADER & HERO SECTION */
+        header {
+            background: linear-gradient(135deg, #FFD700, #FFC300);
+            padding: 20px 0;
+            text-align: center;
+        }
 
-    @font-face {
-      font-family: 'Canvas Sans';
-      src: url('path-to-canvas-sans.woff2');
-    }
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
 
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-      background: url('ChatGPT Image May 24, 2025, 03_51_05 PM.png') no-repeat center center fixed;
-      background-size: cover;
-      z-index: -1;
-    }
+        .tagline {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            color: #333;
+        }
 
-    /* Navigation Bar */
-    .navbar {
-      background-color: #fff700;
-      border-bottom-left-radius: 100px;
-      border-bottom-right-radius: 100px;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      padding: 20px 0;
-      font-family: 'HandMade', cursive;
-      font-size: 36px;
-      animation: pop 1s ease;
-    }
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 50px 20px;
+            background-color: white;
+        }
 
-    .nav-item a {
-      text-decoration: none;
-      color: black;
-      padding: 10px 20px;
-      display: inline-block;
-      animation: burst 1.2s ease;
-    }
+        .hero-text {
+            max-width: 500px;
+        }
 
-    .nav-logo img {
-      height: 100px;
-      animation: old-tv 1.3s ease;
-    }
+        .hero-text h1 {
+            font-size: 2.5rem;
+            color: #FFC300;
+            margin-bottom: 15px;
+        }
 
-    @keyframes pop {
-      0% { transform: scale(0.5); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
+        .hero-image {
+            position: relative;
+        }
 
-    @keyframes burst {
-      0% { transform: scale(0); opacity: 0; }
-      70% { transform: scale(1.2); opacity: 1; }
-      100% { transform: scale(1); }
-    }
+        .hero-image img {
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
 
-    @keyframes old-tv {
-      0% { transform: scale(0.8); opacity: 0; filter: brightness(200%); }
-      50% { transform: scale(1.1); opacity: 1; }
-      100% { transform: scale(1); filter: brightness(100%); }
-    }
+        .product-frames {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
 
-    @keyframes breathe {
-      0%, 100% { transform: scale(1); opacity: 0.8; }
-      50% { transform: scale(1.05); opacity: 1; }
-    }
+        .product-frames img {
+            width: 80px;
+            height: 120px;
+            object-fit: cover;
+            border: 3px solid #FFD700;
+            border-radius: 5px;
+        }
 
-    @keyframes ascend {
-      0% { transform: translateY(50px); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
-    }
+        /* PRODUCT SHOWCASE */
+        .section-title {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 2rem;
+            color: #FFC300;
+        }
 
-    .punch-line {
-      text-align: center;
-      font-family: 'Pacifico', cursive;
-      font-size: 41.7px;
-      color: #fffdd0;
-      margin-top: 40px;
-      animation: breathe 2s ease-in-out infinite;
-    }
+        .products {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 0 20px;
+        }
 
-    .what-special {
-      text-align: center;
-      font-family: 'Lobster', cursive;
-      font-size: 50.3px;
-      color: #ffffff;
-      margin-top: 30px;
-      animation: ascend 1.5s ease;
-    }
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            width: 200px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
 
-    .description {
-      text-align: center;
-      font-family: 'Lobster', cursive;
-      font-size: 31.5px;
-      color: #f4f6fc;
-      margin: 20px auto;
-      max-width: 800px;
-      animation: burst 1.2s ease;
-    }
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
 
-    .testimonials-heading {
-      font-family: 'Bauer Bodoni', serif;
-      font-size: 38.6px;
-      color: #fffdd0;
-      text-align: Centre;
-      margin: 50px 100px 10px 0;
-      animation: burst 1.2s ease;
-    }
+        .product-card img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 2px solid #FFD700;
+            border-radius: 5px;
+        }
 
-    .testimonial {
-      font-family: 'Canvas Sans', sans-serif;
-      font-size: 24px;
-      color: #ffffff;
-      font-weight: bold;
-      text-align: centre;
-      max-width: 900px;
-      margin: 20px 100px;
-      animation: burst 1.2s ease;
-    }
-  </style>
+        /* ABOUT & WHY CHOOSE US */
+        .about, .why-us, .newsletter {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .about h2, .why-us h2, .newsletter h2 {
+            color: #FFC300;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .why-us {
+            text-align: center;
+        }
+
+        .usp {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .usp-item {
+            width: 200px;
+            margin: 10px;
+        }
+
+        .usp-item img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        /* NEWSLETTER */
+        .newsletter form {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .newsletter input {
+            padding: 10px;
+            width: 300px;
+            border: 2px solid #FFD700;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+        }
+
+        .newsletter button {
+            padding: 10px 20px;
+            background: #FFC300;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .social-icons {
+            margin: 15px 0;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+        }
+    </style>
 </head>
 <body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">SnacBerry</div>
+        <div class="tagline">Taste the Fun, Bite the Berry</div>
+    </header>
 
-  <div class="navbar">
-    <div class="nav-item"><a href="#ourstory">Our Story</a></div>
-    <div class="nav-item"><a href="#products">Products</a></div>
-    <div class="nav-logo"><img src="Snac Berry.png" alt="Snac Berry Logo"></div>
-    <div class="nav-item"><a href="#testimonials">Testimonials</a></div>
-    <div class="nav-item"><a href="#findus">Find Us</a></div>
-  </div>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Premium Namkeen & Chips Manufacturer</h1>
+            <p>Wholesale supplier of delicious, crunchy snacks since 2010. Trusted by brands across India.</p>
+            <div class="product-frames">
+                <img src="https://via.placeholder.com/80x120/FFD700/333333?text=Namkeen+1" alt="SnacBerry Namkeen">
+                <img src="https://via.placeholder.com/80x120/FFD700/333333?text=Chips+2" alt="SnacBerry Chips">
+                <img src="https://via.placeholder.com/80x120/FFD700/333333?text=Puff+3" alt="SnacBerry Puff">
+                <img src="https://via.placeholder.com/80x120/FFD700/333333?text=Namkeen+4" alt="SnacBerry Namkeen">
+                <img src="https://via.placeholder.com/80x120/FFD700/333333?text=Chips+5" alt="SnacBerry Chips">
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://via.placeholder.com/400x300/FFFFFF/FFD700?text=Bowl+of+Snacks" alt="SnacBerry Products">
+        </div>
+    </section>
 
-  <div class="punch-line">Taste The Fun, Bite The Berry - Snac Berry</div>
+    <!-- FEATURED PRODUCTS -->
+    <h2 class="section-title">Our Featured Products</h2>
+    <div class="products">
+        <div class="product-card">
+            <img src="https://via.placeholder.com/150/FFFFFF/FFD700?text=Spicy+Namkeen" alt="Spicy Namkeen">
+            <h3>Spicy Namkeen</h3>
+            <p>Perfect blend of spices</p>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/150/FFFFFF/FFD700?text=Masala+Chips" alt="Masala Chips">
+            <h3>Masala Chips</h3>
+            <p>Crunchy & flavorful</p>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/150/FFFFFF/FFD700?text=Cheese+Puffs" alt="Cheese Puffs">
+            <h3>Cheese Puffs</h3>
+            <p>Irresistible cheesy taste</p>
+        </div>
+    </div>
 
-  <div class="what-special">What Makes Us Special?</div>
+    <!-- ABOUT US -->
+    <section class="about">
+        <h2>Our Story</h2>
+        <p>Founded in 2010, SnacBerry started as a small family business in Gujarat. Today, we’re a leading wholesale manufacturer of namkeen, chips, and puffs, supplying to over 500+ retailers across India. Our secret? Traditional recipes with a modern twist!</p>
+    </section>
 
-  <div class="description">
-    At Snac Berry, we believe snacks should be guilt-free and flavorful. That’s why every pack is a burst of crunch and care.
-  </div>
+    <!-- WHY CHOOSE US -->
+    <section class="why-us">
+        <h2>Why Choose SnacBerry?</h2>
+        <div class="usp">
+            <div class="usp-item">
+                <img src="https://via.placeholder.com/60/FFD700/333333?text=✓" alt="Quality">
+                <h3>Premium Quality</h3>
+                <p>100% natural ingredients</p>
+            </div>
+            <div class="usp-item">
+                <img src="https://via.placeholder.com/60/FFD700/333333?text=⚡" alt="Fast">
+                <h3>Bulk Supply</h3>
+                <p>Timely wholesale deliveries</p>
+            </div>
+            <div class="usp-item">
+                <img src="https://via.placeholder.com/60/FFD700/333333?text=❤" alt="Trust">
+                <h3>Trusted Legacy</h3>
+                <p>14+ years in business</p>
+            </div>
+        </div>
+    </section>
 
- <div class="testimonials-heading" style="text-align: center; margin: 50px auto 20px auto;">
-  Testimonials
-</div>
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+        <h2>Stay Updated</h2>
+        <p>Subscribe for new product launches and wholesale offers!</p>
+        <form>
+            <input type="email" placeholder="Your business email">
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
 
-<div class="testimonial" style="text-align: center; margin: 20px auto; max-width: 800px;">
-  “Their service and their product both are very good. Our customers liked it very much! Keep it up Snac Berry!” – <strong>Gupta Ji’s Grocery Store</strong>
-</div>
-
-<div class="testimonial" style="text-align: center; margin: 20px auto; max-width: 800px;">
-  “Their taste, fragrance, aroma... All three are superb! We really appreciate your work!” – <strong>K-Mart</strong>
-</div>
-
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2024 SnacBerry. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="#">📱</a>
+            <a href="#">📧</a>
+            <a href="#">📞</a>
+        </div>
+        <p>Wholesale inquiries: contact@snacberry.com</p>
+    </footer>
 </body>
 </html>
